@@ -1,0 +1,244 @@
+{
+	"id": "fe2c3554-534a-446e-b928-229bb92f0d1f",
+	"name": "Hub de Leitura - Testes",
+	"timestamp": "2026-11-07T11:59:10.181Z",
+	"collection_id": "59186495-f74d54a2-fdc4-4228-a9bc-8f8b1fdc5a6b",
+	"folder_id": "59186495-a49809d1-d0f0-4d2d-8e70-c8871312ad46",
+	"environment_id": "59186495-80f592c2-7e15-45b3-b54b-e90c1e417deb",
+	"totalPass": 11,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-11-07T11:59:09.046Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "1a63bcdc-ab31-4017-a230-8293dabbff51",
+			"name": "Cadastrar usuário com email invalido",
+			"url": "http://localhost:3000/api/users",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Deve validar se o status code é 400": true,
+				"Deve validar a mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar a mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 400": true,
+					"Deve validar a mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "cab17287-7f1e-40a9-9e2d-8daedd8ad20b",
+			"name": "Cadastrar usuário",
+			"url": "http://localhost:3000/api/users",
+			"time": 159,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Deve validar se o status code é 201": true,
+				"Deve validar a mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar a mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				159
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 201": true,
+					"Deve validar a mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "1b712e13-b1a6-42db-a09d-bbcb980d6c02",
+			"name": "Cadastro usuário fixo",
+			"url": "http://localhost:3000/api/users",
+			"time": 70,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Deve validar se o status code é 201": true,
+				"Deve validar a mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar a mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				70
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 201": true,
+					"Deve validar a mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "e53e0a30-db14-41df-900e-e855990f9498",
+			"name": "Login com usuário fixo",
+			"url": "http://localhost:3000/api/login",
+			"time": 84,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code é 200": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				84
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 200": true
+				}
+			]
+		},
+		{
+			"id": "53f64966-e271-40af-8d40-9a343bf01e0c",
+			"name": "Alterar usuário",
+			"url": "http://localhost:3000/api/users/43",
+			"time": 88,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code é 200": true,
+				"Validar mensagem de sucesso": false,
+				"Deve validar mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validar mensagem de sucesso": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Deve validar mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				88
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 200": true,
+					"Validar mensagem de sucesso": false,
+					"Deve validar mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "cce3b3b3-36d7-4fe7-978f-1eec8108ca62",
+			"name": "Listar usuários acesso negado",
+			"url": "http://localhost:3000/api/users",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Deve validar se o status code é 403": true,
+				"Validar mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 403": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validar mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 403": true,
+					"Validar mensagem de sucesso": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 410,
+	"collection": {
+		"requests": [
+			{
+				"id": "1a63bcdc-ab31-4017-a230-8293dabbff51",
+				"method": "POST"
+			},
+			{
+				"id": "cab17287-7f1e-40a9-9e2d-8daedd8ad20b",
+				"method": "POST"
+			},
+			{
+				"id": "1b712e13-b1a6-42db-a09d-bbcb980d6c02",
+				"method": "POST"
+			},
+			{
+				"id": "e53e0a30-db14-41df-900e-e855990f9498",
+				"method": "POST"
+			},
+			{
+				"id": "53f64966-e271-40af-8d40-9a343bf01e0c",
+				"method": "PUT"
+			},
+			{
+				"id": "cce3b3b3-36d7-4fe7-978f-1eec8108ca62",
+				"method": "GET"
+			}
+		]
+	}
+}

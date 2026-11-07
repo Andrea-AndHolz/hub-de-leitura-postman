@@ -1,0 +1,368 @@
+{
+	"id": "608c67df-3f96-4bd1-89ec-8c723c2d53cc",
+	"name": "Hub de Leitura - Testes",
+	"timestamp": "2026-11-07T21:06:24.381Z",
+	"collection_id": "59186495-f74d54a2-fdc4-4228-a9bc-8f8b1fdc5a6b",
+	"folder_id": 0,
+	"environment_id": "59186495-80f592c2-7e15-45b3-b54b-e90c1e417deb",
+	"totalPass": 16,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-11-07T21:06:23.250Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "8528088e-714a-4f82-a2d9-edab20c8bb57",
+			"name": "Login com usuário administrador",
+			"url": "http://localhost:3000/api/login",
+			"time": 57,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se status code é 200": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se status code é 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				57
+			],
+			"allTests": [
+				{
+					"Deve validar se status code é 200": true
+				}
+			]
+		},
+		{
+			"id": "afb2a22e-2bf7-4ad0-8532-aef0f24795ee",
+			"name": "Listar usuários",
+			"url": "http://localhost:3000/api/users",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code é 200": true,
+				"Deve validar a propriedade users": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar a propriedade users": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 200": true,
+					"Deve validar a propriedade users": true
+				}
+			]
+		},
+		{
+			"id": "b7ff6b3a-de15-494b-b13b-c7800addbfe1",
+			"name": "Listar usuário por id",
+			"url": "http://localhost:3000/api/users/1",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code  200": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code  200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code  200": true
+				}
+			]
+		},
+		{
+			"id": "2c234a59-d87b-41d7-9fd0-a765a363f34f",
+			"name": "Deletar usuário",
+			"url": "http://localhost:3000/api/users/49",
+			"time": 28,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code é 200": true,
+				"Deve validar mensagem de sucesso.": true
+			},
+			"testPassFailCounts": {
+				"Status code é 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar mensagem de sucesso.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"Status code é 200": true,
+					"Deve validar mensagem de sucesso.": true
+				}
+			]
+		},
+		{
+			"id": "1ac7547b-3707-4905-b11d-0ca6b6a712ae",
+			"name": "Listar todos os livros disponiveis",
+			"url": "http://localhost:3000/api/books",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code é 200": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 200": true
+				}
+			]
+		},
+		{
+			"id": "e228975a-10a8-48fb-9a5f-80ba6b557866",
+			"name": "Listar livros utilizando filtro",
+			"url": "http://localhost:3000/api/books?search=%20O%20Senhor%20dos%20An%C3%A9is&category=Literatura%20Brasileira&available=true&limit=20&offset=0&order=ASC",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se o status code é 200": true,
+				"Deve validar se trouxe o livro O Senhor dos Anéis": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se o status code é 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar se trouxe o livro O Senhor dos Anéis": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Deve validar se o status code é 200": true,
+					"Deve validar se trouxe o livro O Senhor dos Anéis": true
+				}
+			]
+		},
+		{
+			"id": "b3aca516-f36a-4acb-944a-bcf984cc9526",
+			"name": "Listar reservas de livros",
+			"url": "http://localhost:3000/api/admin/reservations",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se status code é 200": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se status code é 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Deve validar se status code é 200": true
+				}
+			]
+		},
+		{
+			"id": "f2b56a2f-b108-4f79-b167-e92999e3056b",
+			"name": "Limite excedido de reservas",
+			"url": "http://localhost:3000/api/reservations",
+			"time": 21,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Deve validar se status code é 400": true,
+				"Deve validar mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se status code é 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"Deve validar se status code é 400": true,
+					"Deve validar mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "ed157448-2bd3-43db-af09-bf8a14b6a9e0",
+			"name": "Atualizar reserva - devolvido",
+			"url": "http://localhost:3000/api/admin/reservations/9",
+			"time": 54,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Deve validar se status code é 200": true,
+				"Deve validar mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se status code é 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"Deve validar se status code é 200": true,
+					"Deve validar mensagem de sucesso": true
+				}
+			]
+		},
+		{
+			"id": "b71770dc-817a-469b-9309-9ce12192e538",
+			"name": "Criar reserva - livro já reservado",
+			"url": "http://localhost:3000/api/reservations",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Deve validar se status code é 400": true,
+				"Deve validar mensagem de sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deve validar se status code é 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Deve validar mensagem de sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Deve validar se status code é 400": true,
+					"Deve validar mensagem de sucesso": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 201,
+	"collection": {
+		"requests": [
+			{
+				"id": "8528088e-714a-4f82-a2d9-edab20c8bb57",
+				"method": "POST"
+			},
+			{
+				"id": "afb2a22e-2bf7-4ad0-8532-aef0f24795ee",
+				"method": "GET"
+			},
+			{
+				"id": "b7ff6b3a-de15-494b-b13b-c7800addbfe1",
+				"method": "GET"
+			},
+			{
+				"id": "2c234a59-d87b-41d7-9fd0-a765a363f34f",
+				"method": "DELETE"
+			},
+			{
+				"id": "1ac7547b-3707-4905-b11d-0ca6b6a712ae",
+				"method": "GET"
+			},
+			{
+				"id": "e228975a-10a8-48fb-9a5f-80ba6b557866",
+				"method": "GET"
+			},
+			{
+				"id": "b3aca516-f36a-4acb-944a-bcf984cc9526",
+				"method": "GET"
+			},
+			{
+				"id": "f2b56a2f-b108-4f79-b167-e92999e3056b",
+				"method": "POST"
+			},
+			{
+				"id": "ed157448-2bd3-43db-af09-bf8a14b6a9e0",
+				"method": "PUT"
+			},
+			{
+				"id": "b71770dc-817a-469b-9309-9ce12192e538",
+				"method": "POST"
+			}
+		]
+	}
+}
