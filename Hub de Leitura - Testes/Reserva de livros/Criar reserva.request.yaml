@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}reservations"
+method: POST
+headers:
+  accept: "*/*"
+  Authorization: "{{token}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "bookId":18
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se status code é 201\", function () {\r
+
+      \    pm.response.to.have.status(201);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Reserva criada com sucesso.\");\r
+
+      });"
+    language: text/javascript
+order: 6000

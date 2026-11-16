@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{baseUrl}}users"
+method: POST
+headers:
+  accept: application/json
+  Content-Type: application/json
+  Authorization: "{{token}}"
+body:
+  type: json
+  content: |-
+    {
+      "name": "{{usuario}}",
+      "email": "{{email}}",
+      "password": "{{senha}}"
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 201\", function () {\r
+
+      \    pm.response.to.have.status(201);\r
+
+      });\r
+
+      pm.test(\"Deve validar a mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Usuário criado com sucesso.\");\r
+
+      });"
+    language: text/javascript
+order: 3000

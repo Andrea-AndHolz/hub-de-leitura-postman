@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}books"
+method: GET
+headers:
+  token: "{{token}}"
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r\n"
+    language: text/javascript
+order: 1000

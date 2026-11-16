@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{baseUrl}}books?search=%20O%20Senhor%20dos%20An%C3%A9is&category=Literatura%20Brasileira&available=true&limit=20&offset=0&order=ASC"
+method: GET
+headers:
+  accept: application/json
+  token: "{{token}}"
+queryParams:
+  search: "%20O%20Senhor%20dos%20An%C3%A9is"
+  category: Literatura%20Brasileira
+  available: "true"
+  limit: "20"
+  offset: "0"
+  order: ASC
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Deve validar se trouxe o livro O Senhor dos Anéis\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"O Senhor dos Anéis\");\r
+
+      });"
+    language: text/javascript
+order: 2000

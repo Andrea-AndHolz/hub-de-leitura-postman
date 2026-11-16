@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{baseUrl}}login"
+method: POST
+headers:
+  token: "{{token}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"admin@biblioteca.com\",\r
+
+    \  \"password\": \"admin123\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const tokenGerado = pm.response.json().token;\r
+
+      pm.environment.set(\"token\", tokenGerado);\r
+
+      \r
+
+      pm.test(\"Deve validar se status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });"
+    language: text/javascript
+order: 1000

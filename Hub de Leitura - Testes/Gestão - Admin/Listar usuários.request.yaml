@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseUrl}}users"
+method: GET
+headers:
+  Authorization: "{{token}}"
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Deve validar a propriedade users\", function () {\r
+
+      \    pm.expect(pm.response.json()).to.have.property('users');\r
+
+      });"
+    language: text/javascript
+order: 1000

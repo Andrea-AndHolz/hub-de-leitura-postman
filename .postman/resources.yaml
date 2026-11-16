@@ -1,0 +1,17 @@
+# Use this workspace to collaborate
+workspace:
+  id: ""
+
+localResources:
+  collections:
+    - ../Hub de Leitura - Testes
+    - ../Hub de Leitura - Testes.postman_collection.json
+  environments:
+    - ../localhost.environment.yaml
+    - ../localhost.postman_environment.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../Hub de Leitura - Testes: 59186495-f74d54a2-fdc4-4228-a9bc-8f8b1fdc5a6b

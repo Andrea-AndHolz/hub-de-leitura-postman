@@ -1,0 +1,49 @@
+$kind: http-request
+url: "{{baseUrl}}users/91"
+method: PUT
+headers:
+  - key: accept
+    value: application/json
+    disabled: true
+  - key: Authorization
+    value: "{{token}}"
+body:
+  type: json
+  content: |-
+    {
+        "name": "Andrea - atualizado",
+        "email":  "teste91@teste.com",
+        "password": "novaSenha123"
+        
+
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Usuário atualizado com sucesso.\");\r
+
+      });"
+    language: text/javascript
+  - type: beforeRequest
+    code: "pm.test(\"Deve validar se o status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Usuário atualizado com sucesso.\");\r
+
+      });"
+    language: text/javascript
+order: 5000

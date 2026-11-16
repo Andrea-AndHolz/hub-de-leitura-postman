@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}admin/reservations"
+method: GET
+headers:
+  accept: application/json
+  Content-Type: application/json
+  Authorization: "{{token}}"
+body:
+  type: json
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 1000

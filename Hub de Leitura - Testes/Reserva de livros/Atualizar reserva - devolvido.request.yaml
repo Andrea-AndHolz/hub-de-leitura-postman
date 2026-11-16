@@ -1,0 +1,29 @@
+$kind: http-request
+url: http://localhost:3000/api/admin/reservations/9
+method: PUT
+headers:
+  accept: "*/*"
+  Authorization: "{{token}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "status": "returned",
+      "notes": "Livro devolvido em boas condições"
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Status da reserva atualizado com sucesso.\");\r
+
+      });"
+    language: text/javascript
+order: 3000

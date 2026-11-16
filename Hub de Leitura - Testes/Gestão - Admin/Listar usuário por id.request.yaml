@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}users/1"
+method: GET
+headers:
+  accept: application/json
+  Authorization: "{{token}}"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code  200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 2000

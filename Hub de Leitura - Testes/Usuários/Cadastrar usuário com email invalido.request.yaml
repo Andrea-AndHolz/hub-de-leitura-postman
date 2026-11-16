@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{baseUrl}}users"
+method: POST
+headers:
+  accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "{{usuario}}",
+      "email": "usuario.teste.com",
+      "password": "{{senha}}"
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se o status code é 400\", function () {\r
+
+      \    pm.response.to.have.status(400);\r
+
+      });\r
+
+      pm.test(\"Deve validar a mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Formato de email inválido.\");\r
+
+      });"
+    language: text/javascript
+order: 1000

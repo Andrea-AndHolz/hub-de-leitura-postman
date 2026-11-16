@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseUrl}}users/49"
+method: DELETE
+headers:
+  Authorization: "{{token}}"
+body:
+  type: text
+  content: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso.\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Usuário removido com sucesso.\");\r
+
+      });\r\n"
+    language: text/javascript
+order: 3000

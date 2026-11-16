@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{baseUrl}}reservations/12"
+method: DELETE
+headers:
+  accept: "*/*"
+  Authorization: "{{token}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"status\": \"cancelled\",\r
+
+    \  \"notes\": \"Cancelado por solicitação do usuário\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se status code é 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Reserva cancelada com sucesso.\");\r
+
+      });"
+    language: text/javascript
+order: 4000

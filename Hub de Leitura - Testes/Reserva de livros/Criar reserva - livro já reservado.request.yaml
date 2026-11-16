@@ -1,0 +1,28 @@
+$kind: http-request
+url: http://localhost:3000/api/reservations
+method: POST
+headers:
+  accept: "*/*"
+  Authorization: "{{token}}"
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "bookId": 2
+    }
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Deve validar se status code é 400\", function () {\r
+
+      \    pm.response.to.have.status(400);\r
+
+      });\r
+
+      pm.test(\"Deve validar mensagem de sucesso\", function () {\r
+
+      \    pm.expect(pm.response.text()).to.include(\"Você já possui uma reserva ativa para este livro.\");\r
+
+      });"
+    language: text/javascript
+order: 5000

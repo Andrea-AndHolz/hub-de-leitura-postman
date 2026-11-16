@@ -1,0 +1,12 @@
+name: localhost
+values:
+  - key: baseUrl
+    value: ''
+  - key: usuario
+    value: ''
+  - key: senha
+    value: ''
+  - key: email
+    value: ''
+  - key: token
+    value: ''

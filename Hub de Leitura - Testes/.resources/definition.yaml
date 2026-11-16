@@ -1,0 +1,21 @@
+$kind: collection
+description: ""
+variables:
+  - key: bearer_token_00yo
+    secret: true
+  - key: bearer_token_0a8b
+    secret: true
+    source:
+      provider: postman
+      postman:
+        type: cloud
+        secretId: b7e45786-7a7f-45bd-a5eb-7510ccf80fb4
+        vaultId: 6f87f09a-418c-40d1-a469-9f1709372a94
+  - key: bearer_token_0cmh
+    secret: true
+    source:
+      provider: postman
+      postman:
+        type: cloud
+        secretId: c278ac30-3243-4892-9182-ce71898c2f89
+        vaultId: 6f87f09a-418c-40d1-a469-9f1709372a94
