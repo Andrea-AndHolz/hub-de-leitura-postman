@@ -1,3 +1,5 @@
+Atualizado os testes, gerando um unico arquivo sequencial, de forma que o acesso de usuario comum servem para os primeiros teste e usuario administrador para os sequintes.
+
 Gerado dois arquivos de testes, para evitar que alguns testes não interfiram nos demais.
 Primeiro arquivo possui testes referente ao usuario comum e o segundo arquivo para usuario administrador. 
 Arquivo de usuario possui variaveis utilizando random e outros testes utilizando variaveis fixas para gerar um ciclo completo.

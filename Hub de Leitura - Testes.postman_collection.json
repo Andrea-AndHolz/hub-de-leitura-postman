@@ -287,7 +287,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Andrea B -Alterado\",\n  \"email\": \"teste1000@teste.com\",\n  \"password\": \"novaSenha123\"\n}",
+              "raw": "{\n  \"name\": \"Andrea Berger -Alterado\",\n  \"email\": \"teste10011@teste.com\",\n  \"password\": \"novaSenha123\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -295,12 +295,12 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}users/100",
+              "raw": "{{baseUrl}}users/109",
               "host": [
                 "{{baseUrl}}users"
               ],
               "path": [
-                "100"
+                "109"
               ]
             }
           },
@@ -454,15 +454,10 @@
             {
               "listen": "test",
               "script": {
-                "exec": [
-                  "pm.test(\"Deve validar se o status code  200\", function () {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "});\r",
-                  ""
-                ],
                 "type": "text/javascript",
-                "packages": {},
-                "requests": {}
+                "exec": [
+                  "pm.test(\"Deve validar se o status code  200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n"
+                ]
               }
             }
           ],
@@ -479,12 +474,12 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}users/1",
+              "raw": "{{baseUrl}}users/103",
               "host": [
                 "{{baseUrl}}users"
               ],
               "path": [
-                "1"
+                "103"
               ]
             }
           },
@@ -521,12 +516,12 @@
               }
             },
             "url": {
-              "raw": "{{baseUrl}}users/79",
+              "raw": "{{baseUrl}}users/91",
               "host": [
                 "{{baseUrl}}users"
               ],
               "path": [
-                "79"
+                "91"
               ]
             }
           },
